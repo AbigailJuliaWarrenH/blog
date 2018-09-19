@@ -1,32 +1,38 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="card-title">
         {{ $post->title }}
     </h3>
     <small>by {{ $post->user->name }}</small>
     <small>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->diffForHumans() }}</small>
     <div><i class="fas fa-tag"></i> {{ $post->category->name }}</div>
   </div>
-  <div class="panel-body">
-    {!! nl2br($post->content) !!}
+  <div class="card-body">
+    <div class="post-content">
+      {!! nl2br($post->content) !!}
+    </div>
+    @if ($post->user->id == Auth::id())
+      <a class="a-post-edit" data-post_id="{{ $post->id }}" data-toggle="modal" href="#modal-post-edit">edit</a>
+      <span>&middot;</span>
+      <a href="#"
+                  onclick="event.preventDefault();
+                           document.getElementById('form-post-delete-{{ $post->id }}').submit();">
+        delete
+      </a>
+              <form id="form-post-delete-{{ $post->id }}" action="/posts/{{ $post->id }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE')}}
+              </form>
+    @endif
   </div>
-  <div class="panel-footer">
+  <div class="card-footer">
   	{{-- comments section --}}
-  	@foreach ($post->comments as $comment)
-  		<div class="well well-sm">
-  			{{ $comment->content }}
-  		</div>
-  	@endforeach
-	<div class="well well-sm">
-	    <form action="/comments" method="POST" enctype="multipart/form-data">
-	        {{csrf_field()}}
-	        <input type="hidden" name="post_id" value="{{ $post->id }}">
-	        <div class="form-group">
-	          <label for="content">Add comment:</label>
-	          <textarea required class="form-control" rows="2" id="create-comment-content" name="content"></textarea>
-	        </div>
-	        <button type="submit" class="btn btn-primary">Submit</button>
-	    </form>
-	</div>
+    <ul class="list-group">
+      @foreach ($post->comments as $comment)
+        @include('comments.comment')
+      @endforeach
+    </ul>
+    @include('comments.comment_edit_modal')
+    @include('comments.comment_create')
   </div>
 </div>

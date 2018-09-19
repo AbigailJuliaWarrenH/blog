@@ -20,7 +20,29 @@ class PostController extends Controller
     }
 
     function showCategorizedPosts ($category_id) {
-    	$posts = Post::where('category_id',$category_id)->get();
+    	$posts = Post::where('category_id',$category_id)->orderBy('created_at','desc')->get();
     	return view('posts.categorized_posts',compact('posts'));
+    }
+
+    function destroy ($post_id) {
+        $post = Post::find($post_id);
+        $post->delete();
+
+        return redirect()->back();
+    }
+
+    function getContent ($post_id) {
+        $post = Post::find($post_id);
+        return $post;
+    }
+
+    function update (Request $request, $post_id) {
+        $post = Post::find($post_id);
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+        $post->save();
+        
+        return redirect()->back();
     }
 }

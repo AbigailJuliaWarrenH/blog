@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mb-3">
   <div class="card-body">
     <h3>Create Post</h3>
     <form action="/posts" method="POST" enctype="multipart/form-data">
