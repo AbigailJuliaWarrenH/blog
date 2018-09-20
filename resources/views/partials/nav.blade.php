@@ -9,9 +9,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     {{-- left side of navbar --}}
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link" href="/home">My Posts</a>
-      </li>
+      </li> --}}
         @foreach (\App\Category::all() as $category)
             <li class="nav-item">
                 <a class="nav-link" href="/posts/category/{{ $category->id }}">{{ $category->name }}</a>
@@ -32,8 +32,14 @@
                 <a class="nav-link" href="{{ route('register') }}">Register</a>
             </li>
         @else
+            <li class="nav-item">
+                <a class="nav-link" href="/home">My Profile</a>
+            </li>
             {{-- <li class="nav-item">
                 <a class="nav-link" href="/home">My Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home">My Images</a>
             </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"

@@ -1,3 +1,8 @@
+html, body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
 .comment {
     border: 1px solid rgba(0,0,0,.125);
 }

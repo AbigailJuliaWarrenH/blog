@@ -5,9 +5,6 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<!-- custom external stylesheet -->
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
 
 <!-- texteditor -->
 {{-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
@@ -19,3 +16,9 @@
 {{-- bootstrap --}}
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- custom external stylesheet -->
+<link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+
+<!-- custom external stylesheet -->
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">

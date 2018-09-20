@@ -9,20 +9,25 @@
   </div>
   <div class="card-body">
     <div class="post-content">
-      {!! nl2br($post->content) !!}
+      {!! ($post->content) !!}
     </div>
     @if ($post->user->id == Auth::id())
-      <a class="a-post-edit" data-post_id="{{ $post->id }}" data-toggle="modal" href="#modal-post-edit">edit</a>
+      {{-- <a href="/posts/{{ $post->id }}/edit">edit</a> --}}
+      {{-- <a class="a-post-edit" data-post_id="{{ $post->id }}" data-toggle="modal" href="#modal-post-edit">edit</a> --}}
+      <a href="#" onclick="event.preventDefault(); document.getElementById('form-post-edit-{{ $post->id }}').submit();">
+        edit
+      </a>
+      <form id="form-post-edit-{{ $post->id }}" action="/posts/{{ $post->id }}/edit" method="POST" style="display: none;">
+          {{ csrf_field() }}
+      </form>
       <span>&middot;</span>
-      <a href="#"
-                  onclick="event.preventDefault();
-                           document.getElementById('form-post-delete-{{ $post->id }}').submit();">
+      <a href="#" onclick="event.preventDefault(); document.getElementById('form-post-delete-{{ $post->id }}').submit();">
         delete
       </a>
-              <form id="form-post-delete-{{ $post->id }}" action="/posts/{{ $post->id }}" method="POST" style="display: none;">
-                  {{ csrf_field() }}
-                  {{ method_field('DELETE')}}
-              </form>
+      <form id="form-post-delete-{{ $post->id }}" action="/posts/{{ $post->id }}" method="POST" style="display: none;">
+          {{ csrf_field() }}
+          {{ method_field('DELETE')}}
+      </form>
     @endif
   </div>
   <div class="card-footer">

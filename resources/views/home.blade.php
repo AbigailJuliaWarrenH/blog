@@ -33,16 +33,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-9" style="background-color: lightgreen">
-            left
+            left - My Posts
             @include('posts.create_post')
 
             @foreach (Auth::user()->posts as $post)
                 @include('posts.post')
             @endforeach
-            @include('posts.post_edit_modal')
+            {{-- @include('posts.post_edit_modal') --}}
         </div>
         <div class="col-md-3" style="background-color: lightblue">
-            right
+            right - My Images
+            @include('images.right_sidebar')
         </div>
     </div>
 </div>

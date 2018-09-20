@@ -43,6 +43,12 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->save();
         
-        return redirect()->back();
+        return redirect('home');
+    }
+
+    function edit (Request $request, $post_id) {
+        $post = Post::find($post_id);
+        // dd('hi');
+        return view('posts.post_edit_form',compact('post'));
     }
 }

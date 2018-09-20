@@ -8,5 +8,27 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+
+
+
+
+{{-- ckeditor --}}
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
+<script>
+    $('textarea[id$="post-content"]').ckeditor();
+    // $('.textarea').ckeditor(); // if class is prefered.
+</script>
+
+{{-- dropzone --}}
+<script src="{{ asset('js/dropzone.js') }}"></script>
+
+
+
+
+
+
+
+
 <!-- custom external script -->
 <script src="{{ asset('js/script.js') }}"></script>

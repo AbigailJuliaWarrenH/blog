@@ -26,3 +26,31 @@ $('.a-post-edit').click(function(e) {
 		}
 	});
 });
+
+$("#input-upload-image").change(function() {
+	$(this).parent().submit();
+});
+
+$("#form-upload-image").submit(function(e) {
+	e.preventDefault();    
+    const formData = new FormData(this);
+
+    $.ajax({
+        url: $(this).attr("action"),
+        type: 'POST',
+        data: formData,
+        success: function (images) {
+            for (let image of images) {
+            	$('div#uploaded-images').prepend(`
+            		<img src="${image}" style="width: 100%"><br>
+            	`);
+            }
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+});
+
+// $("div#upload-image").dropzone({ url: "/file/post" });
+// var myDropzone = new Dropzone("div#upload-image", { url: "/file/post"});
