@@ -51,4 +51,14 @@ class PostController extends Controller
         // dd('hi');
         return view('posts.post_edit_form',compact('post'));
     }
+
+    function like (Request $request) {
+        $post = Post::find($request->post_id);
+        $post->likes()->attach($request->user_id);
+    }
+
+    function unlike (Request $request) {
+        $post = Post::find($request->post_id);
+        $post->likes()->detach($request->user_id);
+    }
 }

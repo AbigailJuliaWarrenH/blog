@@ -21,16 +21,23 @@
         </div>
     </div>
 </div> --}}
+<div class="jumbotron text-white jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome, {{ Auth::user()->name }}</h1>
+     <p class="lead">No matter what the recipe, any baker can do wonders in the kitchen with some good ingredients and an upbeat attitude!</p>
+  </div>
+</div>
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9" style="background-color: lightgreen">
-            left
+        <div class="col-md-9" style="background-color: #49edb6">
+            <br>
             @foreach ($posts as $post)
                 @include('posts.post')
             @endforeach
         </div>
-        <div class="col-md-3" style="background-color: lightblue">
-            right
+        <div class="col-md-3" style="background-color: #28e3ed">
+           <br>
         </div>
     </div>
 </div>

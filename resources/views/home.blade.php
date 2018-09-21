@@ -9,6 +9,12 @@
   </div>
 </div>
 
+<div class="container-fluid maca px-0 py-0">
+    <div class="container-fluid" id="blog-repeat">
+       <h2 class="text-center mb-2 bake">Bake Blog Repeat</h2>
+  </div>
+</div>
+
 
 {{-- <div class="container">
     <div class="row">
@@ -32,8 +38,8 @@
 </div> --}}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9" style="background-color: lightgreen">
-            left - My Posts
+        <div class="col-md-9" style="background-color: #49edb6">
+           <br>
             @include('posts.create_post')
 
             @foreach (Auth::user()->posts as $post)
@@ -41,8 +47,8 @@
             @endforeach
             {{-- @include('posts.post_edit_modal') --}}
         </div>
-        <div class="col-md-3" style="background-color: lightblue">
-            right - My Images
+        <div class="col-md-3" style="background-color: #28e3ed">
+            <br>
             @include('images.right_sidebar')
         </div>
     </div>

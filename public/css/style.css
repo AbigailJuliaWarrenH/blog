@@ -8,10 +8,34 @@ html, body {
 }
 
 .jumbotron {
-	background-image: url("/images/bread.jpg");
+	background-image: url("/images/pastry.jpg");
 	background-size: cover;
+	margin-bottom: 0rem !important;
 }
 
 .jumbotron .container {
 	background-color: rgba(0,0,0,.5);
+}
+
+nav	{
+	background-color: #0857d6;
+}
+
+.maca {
+	background-image: url("/images/donuts.jpg");
+	background-size: cover;
+
+    margin-right: 200px;
+}
+
+#blog-repeat {
+	background-image: url('/images/maca.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 10rem;
+}
+
+.bake {
+	padding-top: 5%;
 }

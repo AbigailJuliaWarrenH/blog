@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28e3ed;"> 
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'Pâtisserie') }}
     </a>

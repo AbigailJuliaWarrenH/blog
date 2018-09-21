@@ -1,3 +1,9 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 $('.a-comment-edit').click(function(e) {
 	e.preventDefault();
 	const commentID = $(this).data('comment_id');
@@ -54,3 +60,43 @@ $("#form-upload-image").submit(function(e) {
 
 // $("div#upload-image").dropzone({ url: "/file/post" });
 // var myDropzone = new Dropzone("div#upload-image", { url: "/file/post"});
+
+$(document).on('click','.a-post-like',function(e) {
+	e.preventDefault();
+	const postID = $(this).data('post-id');
+	const userID = $(this).data('user-id');
+	$.ajax({
+		method: 'post',
+		url: '/posts/like',
+		data: { post_id: postID, user_id: userID },
+		success: function(data) {
+			// console.log(data);
+			console.log('liked!');
+		}
+	});
+	let count = $('#badge-post-like-count-'+postID);
+	count.html( Number(count.html()) + 1 );
+	$(this).html('unlike');
+	$(this).removeClass('a-post-like');
+	$(this).addClass('a-post-unlike');
+});
+
+$(document).on('click','.a-post-unlike',function(e) {
+	e.preventDefault();
+	const postID = $(this).data('post-id');
+	const userID = $(this).data('user-id');
+	$.ajax({
+		method: 'post',
+		url: '/posts/unlike',
+		data: { post_id: postID, user_id: userID },
+		success: function(data) {
+			// console.log(data);
+			console.log('unliked!');
+		}
+	});
+	let count = $('#badge-post-like-count-'+postID);
+	count.html( Number(count.html()) - 1 );
+	$(this).html('like');
+	$(this).removeClass('a-post-unlike');
+	$(this).addClass('a-post-like');
+});

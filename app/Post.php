@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Post extends Model
 {
@@ -16,5 +17,13 @@ class Post extends Model
 
     function comments () {
     	return $this->hasMany('App\Comment');
+    }
+
+    function likes() {
+    	return $this->belongsToMany('App\User','post_likes');
+    }
+
+    function isLikedByAuthUser() {
+    	return $this->likes()->where('user_id',Auth::id())->get()->count();
     }
 }
