@@ -42,12 +42,14 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                        @foreach (\App\Category::all() as $category)
-                            <li><a href="/posts/category/{{ $category->id }}">{{ $category->name }}</a></li>
-                        @endforeach
-                    </ul>
+                    @auth
+                        <ul class="nav navbar-nav">
+                            &nbsp;
+                            @foreach (\App\Category::all() as $category)
+                                <li><a href="/posts/category/{{ $category->id }}">{{ $category->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

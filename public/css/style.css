@@ -3,6 +3,10 @@ html, body {
 	overflow-x: hidden;
 }
 
+body {
+	padding-top: 56px;
+}
+
 .comment {
     border: 1px solid rgba(0,0,0,.125);
 }
@@ -38,4 +42,8 @@ nav	{
 
 .bake {
 	padding-top: 5%;
+}
+
+#input-upload-image {
+	width: 220px;
 }

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28e3ed;"> 
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #28e3ed;"> 
     <a class="navbar-brand" href="{{ url('/') }}">
         {{ config('app.name', 'Pâtisserie') }}
     </a>
@@ -8,19 +8,24 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     {{-- left side of navbar --}}
-    <ul class="navbar-nav mr-auto">
-      {{-- <li class="nav-item">
-        <a class="nav-link" href="/home">My Posts</a>
-      </li> --}}
-        @foreach (\App\Category::all() as $category)
+      @auth
+        <ul class="navbar-nav mr-auto">
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="/home">My Posts</a>
+          </li> --}}
             <li class="nav-item">
-                <a class="nav-link" href="/posts/category/{{ $category->id }}">{{ $category->name }}</a>
+                <a class="nav-link" href="/about">About</a>
             </li>
-        @endforeach
-      {{-- <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li> --}}
-    </ul>
+            @foreach (\App\Category::all() as $category)
+                <li class="nav-item">
+                    <a class="nav-link" href="/posts/category/{{ $category->id }}">{{ $category->name }}</a>
+                </li>
+            @endforeach
+          {{-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li> --}}
+        </ul>
+      @endauth
     {{-- right side of navbar --}}
     <ul class="navbar-nav">
         <!-- Authentication Links -->

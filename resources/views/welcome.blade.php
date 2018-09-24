@@ -5,21 +5,29 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
         <title>Pâtisserie</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Give+You+Glory|Homemade+Apple" rel="stylesheet">
+
+        {{-- fontawesome --}}
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #fff;
-                font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-                background-image: url("{{ asset('images/waffle-heart.jpg') }}"); 
+                background-image: url("{{ asset('images/waffle-heart.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center; 
             }
 
             .full-height {
@@ -50,7 +58,7 @@
                 font-size: 84px;
             }
 
-            .links > a {
+           /* .links > a {
                 color: #636b6f;
                 padding: 0 25px;
                 font-size: 12px;
@@ -58,39 +66,97 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-            }
+            }*/
 
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .cover {
+            background-color: #31c695b3;
+            }
+
+            #landfont {
+                font-family: 'Homemade Apple', cursive;
+            }
+
+            .quote {
+                font-family: 'Give You Glory', cursive;
+                color: #52260b;
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 800;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 20px;    
+            }
+
+            .sub{
+                font-family: 'Give You Glory', cursive;
+                color: #52260b;
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .fas {
+                color: #fff;
+                font-size: 50px;
+                padding: 10px;
+            }
+
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" id="home">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}"><i class="fas fa-home"></i> {{-- <img src="images/home-sketch"> --}}</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
+                        <a href="{{ route('register') }}"><i class="fas fa-pen"></i></a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Pâtisserie
-                </div>
+            <div class="cover">
+                    
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                <div class="quote">
+
+                    <p>"You learn a lot about someone 
+                     <br>   
+                   when you share a meal together."
+                     <br>   
+                     -Anthony Bourdain
+                    </p>
+                    {{-- <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                </div>
+                <div class="title m-b-md" id="landfont">
+                    Pâtisserie
+                </div>
+                  <div class="sub">
+
+                    <p>Bakers, Pastry Chefs and Baking Enthusiasts <br> Online Community</p>
+                 
+                    {{-- <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
                 </div>
             </div>
+            </div>
         </div>
+
     </body>
 </html>
