@@ -1,4 +1,4 @@
-<div class="card mb-3">
+<div id="post-{{ $post->id}}" class="card mb-3">
   <div class="card-header">
     <h3 class="card-title">
         {{ $post->title }}
@@ -8,7 +8,7 @@
     <div><i class="fas fa-tag"></i> {{ $post->category->name }}</div>
   </div>
   <div class="card-body">
-    <div class="post-content">
+    <div class="post-content" style="overflow-x: scroll;">
       {!! ($post->content) !!}
     </div>
     @if ($post->isLikedByAuthUser())
@@ -39,7 +39,7 @@
   </div>
   <div class="card-footer">
   	{{-- comments section --}}
-    <ul class="list-group">
+    <ul class="list-group comments">
       @foreach ($post->comments as $comment)
         @include('comments.comment')
       @endforeach

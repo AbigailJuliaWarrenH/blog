@@ -1,6 +1,9 @@
+<div>
+<h4>Upload Images here:</h4>
+</div> 
 <div class="card mb-3">
   <div class="card-body">
-    <h3>Upload Image</h3>
+    <h3>Upload Images</h3>
     {{-- <input type="file" name="file" multiple> --}}
     {{-- <div id="upload-image"></div> --}}
     <form id="form-upload-image" method="post" enctype="multipart/form-data" action="/images/upload">
@@ -19,7 +22,15 @@
 
 <div class="card mb-3">
   <div class="card-body">
-    <h3>Uploaded Images</h3>
+    <h3>Photos Uploaded</h3>
     <div id="uploaded-images" style="text-align: center;"></div>
   </div>
+</div>
+
+<div>
+  <h4>then transfer images to your post.</h4>
+</div>
+<br>
+<div>
+  <img src="/images/macaroons1.jpg" id="rightimage">
 </div>

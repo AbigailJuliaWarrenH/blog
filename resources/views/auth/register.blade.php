@@ -1,10 +1,115 @@
-@extends('layouts.app')
+@extends('template')
 
 @section('content')
+
+<!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #fff;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+                background-image: url("{{ asset('images/waffle-heart.jpg') }}");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center; 
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+           /* .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }*/
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+            .cover {
+            background-color: #31c695b3;
+            }
+
+            #landfont {
+                font-family: 'Homemade Apple', cursive;
+            }
+
+            .quote {
+                font-family: 'Give You Glory', cursive;
+                color: #52260b;
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 800;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 20px;    
+            }
+
+            .sub{
+                font-family: 'Give You Glory', cursive;
+                color: #52260b;
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .fas {
+                color: #fff;
+                font-size: 50px;
+                padding: 10px;
+            }
+            
+            .btn {
+                margin-bottom: 20px;
+            }
+
+            .panel-heading{
+                padding: 20px;
+            }
+         </style>
+
 <div class="container ">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+    <div class="flex-center position-ref full-height">
+
+{{--     <div class="row">
+ --}}        
+         <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default cover">
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
@@ -73,5 +178,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

@@ -19,18 +19,22 @@ body {
 
 .jumbotron .container {
 	background-color: rgba(0,0,0,.5);
+	padding: 50px;
+	margin-top: 70px;
+
+
 }
 
 nav	{
 	background-color: #0857d6;
 }
 
-.maca {
+/*.maca {
 	background-image: url("/images/donuts.jpg");
 	background-size: cover;
 
     margin-right: 200px;
-}
+}*/
 
 #blog-repeat {
 	background-image: url('/images/maca.jpg');
@@ -46,4 +50,50 @@ nav	{
 
 #input-upload-image {
 	width: 220px;
+}
+
+.macatop {
+	background-image: url('/images/macaroonstop.jpg');
+	background-size: cover;
+	margin-right: 200px;
+}
+
+#about-repeat {
+	background-image: url('/images/macaroonstop.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 60rem;
+}
+
+#bakeblogfont{
+	font-family: 'Cabin Sketch', cursive;
+	margin-right: 10px;
+
+	padding: 40px;
+    
+    font-weight: 200;
+    letter-spacing: .1rem;
+    text-decoration: none;
+/*    text-transform: uppercase;
+*/    font-size: 60px;   
+	color: #C76462;
+}
+
+#logo{
+	font-family: 'Homemade Apple', cursive;
+	color: #fff;
+	font-size: 55px;
+	text-align: center;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+#rightimage {
+	width: 100%; 
+	height: auto;
+}
+
+#welcome{
+
 }

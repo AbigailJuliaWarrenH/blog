@@ -17,6 +17,11 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
+{{-- font google --}}
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Give+You+Glory|Homemade+Apple" rel="stylesheet">
+
 <!-- custom external stylesheet -->
 <link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
 

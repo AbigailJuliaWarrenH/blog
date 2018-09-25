@@ -4,16 +4,22 @@
 
 <div class="jumbotron text-white jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Welcome, {{ Auth::user()->name }}</h1>
+    <h1 class="display-4" id="welcome">Welcome, {{ Auth::user()->name }}!</h1>
      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
   </div>
 </div>
 
 <div class="container-fluid maca px-0 py-0">
     <div class="container-fluid" id="blog-repeat">
-       <h2 class="text-center mb-2 bake">Bake Blog Repeat</h2>
+       <h2 class="text-center mb-2 bake" id="bakeblogfont">Bake Blog Repeat</h2>
   </div>
 </div>
+
+{{-- <div class="container-fluid maca px-0 py-0">
+    <div class="container-fluid" id="blog-repeat">
+       <h2 class="text-right mb-2 bake text-white" id="bakeblogfont">Bake Blog Repeat</h2>
+  </div>
+</div> --}}
 
 
 {{-- <div class="container">

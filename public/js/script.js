@@ -4,20 +4,7 @@ $.ajaxSetup({
     }
 });
 
-$('.a-comment-edit').click(function(e) {
-	e.preventDefault();
-	const commentID = $(this).data('comment_id');
-	// console.log(commentID); return;
-	$.ajax({
-		url: '/comments/'+commentID+'/get_content',
-		success: function (data) {
-			$('#modal-comment-edit [action="/comments/"]').attr('action',"/comments/"+commentID);
-			$('#modal-comment-edit [name="content"]').val(data);
-		}
-	});
-});
-
-$('.a-post-edit').click(function(e) {
+$(document).on('click','.a-post-edit',function(e) {
 	e.preventDefault();
 	const postID = $(this).data('post_id');
 	// console.log(postID); return;
@@ -25,7 +12,7 @@ $('.a-post-edit').click(function(e) {
 		url: '/posts/'+postID+'/get_content',
 		success: function (post) {
 			// console.log(post); return;
-			$('#modal-post-edit [action="/posts/"]').attr('action',"/posts/"+postID);
+			$('#modal-post-edit [action^="/posts/"]').attr('action',"/posts/"+postID);
 			$('#modal-post-edit [name="content"]').val(post.content);
 			$('#modal-post-edit [name="title"]').val(post.title);
 			$('#modal-post-edit [name="category_id"]').val(post.category_id);
@@ -33,11 +20,11 @@ $('.a-post-edit').click(function(e) {
 	});
 });
 
-$("#input-upload-image").change(function() {
+$(document).on('change',"#input-upload-image",function() {
 	$(this).parent().submit();
 });
 
-$("#form-upload-image").submit(function(e) {
+$(document).on('submit',"#form-upload-image",function(e) {
 	e.preventDefault();    
     const formData = new FormData(this);
 
@@ -99,4 +86,62 @@ $(document).on('click','.a-post-unlike',function(e) {
 	$(this).html('like');
 	$(this).removeClass('a-post-unlike');
 	$(this).addClass('a-post-like');
+});
+
+$(document).on('submit','.form-comment-create',function(e) {
+	e.preventDefault();
+	const postID = $(this).data('post-id');
+	const form = $(this);
+	const textAreaInForm = $('textarea',this);
+	const formData = form.serialize();
+	// const formData = new FormData(this);
+
+	$.post(form.attr('action'), formData, function(data) {
+		$(`#post-${postID} .comments`).append(data);
+		textAreaInForm.val('');
+	});
+});
+
+$(document).on('click','.a-comment-delete',function(e) {
+	e.preventDefault();
+	const commentID = $(this).data('comment_id');
+	$('#form-comment-delete-'+commentID).submit();
+});
+
+$(document).on('submit','.form-comment-delete',function(e) {
+	e.preventDefault();
+	const form = $(this);
+	const formData = form.serialize();
+
+	$.post(form.attr('action'), formData, function() {
+		form.parentsUntil('body','.comment').remove();
+	});
+});
+
+$(document).on('click','.a-comment-edit',function(e) {
+	e.preventDefault();
+	const commentID = $(this).data('comment_id');
+	// console.log(commentID); return;
+	$.ajax({
+		url: '/comments/'+commentID+'/get_content',
+		success: function (data) {
+			$('#modal-comment-edit [action^="/comments/"]').attr('action',"/comments/"+commentID);
+			$(`#modal-comment-edit [action="/comments/${commentID}"]`).data('comment_id',commentID);
+			$('#modal-comment-edit [name="content"]').val(data);
+		}
+	});
+});
+
+$(document).on('submit','.form-comment-edit',function(e) {
+	e.preventDefault();
+	$('#modal-comment-edit').modal('hide');
+	const form = $(this);
+	const commentID = $(this).data('comment_id');
+	const formData = form.serialize();
+	const commentContent = $('textarea[name="content"]',this).val();
+
+	$.post(form.attr('action'), formData, function() {
+		// form.parentsUntil('body','.comment').remove();
+		$(`#comment-${commentID} .comment-content`).html(commentContent.replace(/(?:\r\n|\r|\n)/g, '<br>'));
+	});
 });

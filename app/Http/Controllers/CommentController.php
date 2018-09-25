@@ -15,14 +15,12 @@ class CommentController extends Controller
         $comment->post_id = $request->post_id;
         $comment->save();
 
-        return redirect()->back();
+        return view('comments.comment',compact('comment'));
     }
 
     function destroy ($comment_id) {
         $comment = Comment::find($comment_id);
         $comment->delete();
-
-        return redirect()->back();
     }
 
     function getContent ($comment_id) {
@@ -34,7 +32,5 @@ class CommentController extends Controller
         $comment = Comment::find($comment_id);
         $comment->content = $request->content;
         $comment->save();
-        
-        return redirect()->back();
     }
 }

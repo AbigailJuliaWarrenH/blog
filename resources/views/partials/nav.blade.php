@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #28e3ed;"> 
-    <a class="navbar-brand" href="{{ url('/') }}">
+    <a class="navbar-brand" id="logo" href="{{ url('/') }}">
         {{ config('app.name', 'Pâtisserie') }}
     </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

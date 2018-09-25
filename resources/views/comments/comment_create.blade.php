@@ -1,5 +1,5 @@
 <div class="comment-create">
-    <form action="/comments" method="POST" enctype="multipart/form-data">
+    <form data-post-id="{{ $post->id }}" class="form-comment-create" action="/comments" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
         <input type="hidden" name="post_id" value="{{ $post->id }}">
         <div class="form-group">

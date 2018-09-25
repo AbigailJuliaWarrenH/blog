@@ -1,4 +1,4 @@
-<form action="/comments/" method="POST" enctype="multipart/form-data">
+<form class="form-comment-edit" action="/comments/" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     {{method_field('PATCH')}}
     <div class="form-group">

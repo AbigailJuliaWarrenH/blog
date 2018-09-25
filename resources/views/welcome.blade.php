@@ -71,8 +71,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
             .cover {
-            background-color: #31c695b3;
+            background-color: #31c695d3;
             }
 
             #landfont {
@@ -81,10 +82,10 @@
 
             .quote {
                 font-family: 'Give You Glory', cursive;
-                color: #52260b;
+                color: #ffe5a2;
                 padding: 20px;
                 font-size: 20px;
-                font-weight: 800;
+                font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -108,6 +109,42 @@
                 padding: 10px;
             }
 
+            /*extra small devices*/
+            @media only screen and (max-width: 575.98px){
+
+            } 
+            /*end of small devices*/
+
+            /*small devices*/
+            @media only screen and (min-width: 576px) and (max-width: 767.98px){
+
+            }
+            /*end of small devices*/
+
+            @media only screen and (max-width: 767.9px) {
+                #landfont {
+                    font-size: 15vw;
+                }
+                .sub {
+
+                }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+                #landfont {
+                    font-size: 12vw;
+                }
+            }
+
+            @media only screen and (min-width: 992px) and (max-width: 1199.98px){
+
+            }
+
+            @media only screen and (min-width: 1200px){
+
+            }
+
+
         </style>
     </head>
     <body>
@@ -123,38 +160,40 @@
                 </div>
             @endif
 
-            <div class="content">
-            <div class="cover">
-                    
+            <div class="row">
+                <div class="col content">
+                    <div class="cover">
+                            
 
-                <div class="quote">
+                        <div class="quote">
 
-                    <p>"You learn a lot about someone 
-                     <br>   
-                   when you share a meal together."
-                     <br>   
-                     -Anthony Bourdain
-                    </p>
-                    {{-- <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
-                </div>
-                <div class="title m-b-md" id="landfont">
-                    Pâtisserie
-                </div>
-                  <div class="sub">
+                            <p>"You learn a lot about someone 
+                             <br>   
+                           when you share a meal together."
+                             <br>   
+                             -Anthony Bourdain
+                            </p>
+                            {{-- <a href="https://laravel.com/docs">Documentation</a>
+                            <a href="https://laracasts.com">Laracasts</a>
+                            <a href="https://laravel-news.com">News</a>
+                            <a href="https://forge.laravel.com">Forge</a>
+                            <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                        </div>
+                        <div class="title m-b-md" id="landfont">
+                            Pâtisserie
+                        </div>
+                          <div class="sub">
 
-                    <p>Bakers, Pastry Chefs and Baking Enthusiasts <br> Online Community</p>
-                 
-                    {{-- <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                            <p>Bakers, Pastry Chefs and Baking Enthusiasts <br> Online Community</p>
+                         
+                            {{-- <a href="https://laravel.com/docs">Documentation</a>
+                            <a href="https://laracasts.com">Laracasts</a>
+                            <a href="https://laravel-news.com">News</a>
+                            <a href="https://forge.laravel.com">Forge</a>
+                            <a href="https://github.com/laravel/laravel">GitHub</a> --}}
+                        </div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
