@@ -24,7 +24,7 @@
 <div class="jumbotron text-white jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Welcome, {{ Auth::user()->name }}</h1>
-     <p class="lead">No matter what the recipe, any baker can do wonders in the kitchen with some good ingredients and an upbeat attitude!</p>
+     <p class="lead">"No matter what the recipe, any baker can do wonders in the kitchen with some good ingredients and an upbeat attitude!" -Buddy Valastro</p>
   </div>
 </div>
 
@@ -36,8 +36,11 @@
                 @include('posts.post')
             @endforeach
         </div>
-        <div class="col-md-3" style="background-color: #28e3ed">
+        <div class="col-md-3" style="background-color: #F5E5C2">
            <br>
+           <div>
+               <img src="/images/macaroons1.jpg" id="rightimage1">
+           </div>
         </div>
     </div>
 </div>

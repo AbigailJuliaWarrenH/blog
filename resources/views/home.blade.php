@@ -5,7 +5,7 @@
 <div class="jumbotron text-white jumbotron-fluid">
   <div class="container">
     <h1 class="display-4" id="welcome">Welcome, {{ Auth::user()->name }}!</h1>
-     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+     <p class="lead">"For me, I don't expect to have a really amazing meal each time I dine out. Having a good meal with your loved ones - that's what makes the experience." -Wolfgang Puck</p>
   </div>
 </div>
 
@@ -53,7 +53,7 @@
             @endforeach
             {{-- @include('posts.post_edit_modal') --}}
         </div>
-        <div class="col-md-3" style="background-color: #28e3ed">
+        <div class="col-md-3" style="background-color: #F5E5C2">
             <br>
             @include('images.right_sidebar')
         </div>

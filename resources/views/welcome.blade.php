@@ -89,7 +89,7 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-                font-size: 20px;    
+                /*font-size: 20px;    */
             }
 
             .sub{

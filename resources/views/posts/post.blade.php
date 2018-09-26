@@ -44,7 +44,6 @@
         @include('comments.comment')
       @endforeach
     </ul>
-    @include('comments.comment_edit_modal')
     @include('comments.comment_create')
   </div>
 </div>

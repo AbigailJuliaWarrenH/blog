@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #28e3ed;"> 
+<nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" style="background-color: #28e3ed;"> 
     <a class="navbar-brand" id="logo" href="{{ url('/') }}">
         {{ config('app.name', 'Pâtisserie') }}
     </a>
@@ -9,7 +9,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     {{-- left side of navbar --}}
       @auth
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto" id="toplink">
           {{-- <li class="nav-item">
             <a class="nav-link" href="/home">My Posts</a>
           </li> --}}
@@ -30,14 +30,14 @@
     <ul class="navbar-nav">
         <!-- Authentication Links -->
         @guest
-            <li class="nav-item">
+            <li class="nav-item" id="toplink1">
                 <a class="nav-link" href="{{ route('login') }}">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="toplink2">
                 <a class="nav-link" href="{{ route('register') }}">Register</a>
             </li>
         @else
-            <li class="nav-item">
+            <li class="nav-item" id="toplink3">
                 <a class="nav-link" href="/home">My Profile</a>
             </li>
             {{-- <li class="nav-item">
@@ -46,7 +46,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/home">My Images</a>
             </li> --}}
-            <li class="nav-item">
+            <li class="nav-item" id="toplink4">
                 <a class="nav-link" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
@@ -61,3 +61,11 @@
     </ul>
   </div>
 </nav>
+
+<script type="text/javascript">
+    
+    $('button.navbar-toggler').click( ()=>{
+        $('#navbarSupportedContent').toggle();
+    });
+
+</script>

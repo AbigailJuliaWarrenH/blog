@@ -3,8 +3,8 @@
 @section('content')
 <div class="jumbotron text-white jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">{{ Auth::user()->name }}, edit your post here.</h1>
-     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <h5 class="display-4">{{ Auth::user()->name }}, </h5>
+     <p class="lead">edit your post here.</p>
   </div>
 </div>
 <div class="container-fluid">

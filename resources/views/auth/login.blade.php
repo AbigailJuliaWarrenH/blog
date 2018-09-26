@@ -58,6 +58,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
             .cover {
             background-color: #31c695b3;
 
@@ -109,9 +110,9 @@
 
  <div class="flex-center position-ref full-height">
     {{-- <div class="row"> --}}
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default cover ">
-                <div class="panel-heading">Login</div>
+        <div class="col-md-8 col-md-offset-2 cover">
+            <div class="panel panel-default">
+                <div class="panel-heading ">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

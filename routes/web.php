@@ -41,6 +41,7 @@ Route::post('/posts/like', 'PostController@like');
 Route::post('/posts/unlike', 'PostController@unlike');
 
 Route::post('/comments', 'CommentController@store');
+
 Route::delete('/comments/{comment_id}', 'CommentController@destroy');
 Route::patch('/comments/{comment_id}', 'CommentController@update');
 Route::get('/comments/{comment_id}/get_content', 'CommentController@getContent');

@@ -8,7 +8,7 @@
 		</span>
 		<div>
 			@if ($comment->user->id == Auth::id())
-				<a class="a-comment-edit" data-comment_id="{{ $comment->id }}" data-toggle="modal" href="#modal-comment-edit">edit</a>
+				<a href="#" data-toggle="modal" data-target="#modal-comment-edit" class="a-comment-edit" data-comment_id="{{ $comment->id }}">edit</a>
 				<span>&middot;</span>
 				<a href="#" class="a-comment-delete" data-comment_id="{{ $comment->id }}">
 					delete
@@ -20,4 +20,4 @@
 			@endif
 		</div>
 	</div>
-</li>
+</li> 

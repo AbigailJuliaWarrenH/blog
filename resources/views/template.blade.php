@@ -9,5 +9,6 @@
     @yield('content')
     @include('partials.scripts')
     @include('comments.comment_edit_modal')
+    @include('partials.footer')
 </body>
 </html>

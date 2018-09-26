@@ -4,8 +4,8 @@ html, body {
 }
 
 body {
-	padding-top: 56px;
-}
+/*	padding-top: 56px;
+*/}
 
 .comment {
     border: 1px solid rgba(0,0,0,.125);
@@ -14,19 +14,28 @@ body {
 .jumbotron {
 	background-image: url("/images/pastry.jpg");
 	background-size: cover;
+	font-family: 'Righteous', cursive;
 	margin-bottom: 0rem !important;
 }
 
 .jumbotron .container {
 	background-color: rgba(0,0,0,.5);
 	padding: 50px;
-	margin-top: 70px;
+	margin-top: 100px;
 
 
 }
 
 nav	{
 	background-color: #0857d6;
+}
+
+.navbar{
+	width: 100%;
+	height: auto;
+	display: flex;
+	position: fixed;
+	z-index: 99;
 }
 
 /*.maca {
@@ -83,7 +92,7 @@ nav	{
 #logo{
 	font-family: 'Homemade Apple', cursive;
 	color: #fff;
-	font-size: 55px;
+	font-size: 50px;
 	text-align: center;
 	margin-top: 10px;
 	padding-top: 10px;
@@ -94,6 +103,134 @@ nav	{
 	height: auto;
 }
 
+#rightimage1 {
+	width: 100%; 
+	height: auto;
+}
+
 #welcome{
 
 }
+
+footer {
+    background-color: #28e3ed;
+}
+
+.navbar-ftr{
+	background-color: #28e3ed;
+	padding: 40px;
+	margin-bottom: 30px;
+}
+
+#foot{
+	padding: 15px;
+}
+.nav-itm-ftr {
+	margin: 0 !important;
+
+}
+
+#sider{
+	background-color: #fff;
+}
+        
+/*#justpushtobottom {
+    height: 82vh;
+}*/
+
+#toplink{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 25px;
+	/*text-transform: uppercase;*/
+}
+
+#toplink1{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}#toplink2{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}#toplink3{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}
+
+#toplink4{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}
+
+#footfont{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}
+
+#footfont1{
+	font-family: 'Acme', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	/*text-transform: uppercase;*/
+}
+
+#textabt{
+	font-family: 'Crete Round', serif;
+	font-size: 20px;
+}
+
+/*extra small devices*/
+            @media only screen and (max-width: 575.98px){
+            	#bakeblogfont{
+					/*font-family: 'Cabin Sketch', cursive;*/
+					margin-right: 10px;
+
+					padding: 40px;
+    
+    				font-weight: 200;
+    				letter-spacing: .1rem;
+    				text-decoration: none;
+/*  				  text-transform: uppercase;
+*/  				  font-size: 40px;   
+					color: #C76462;
+}
+            } 
+            /*end of small devices*/
+
+            /*small devices*/
+            @media only screen and (min-width: 576px) and (max-width: 767.98px){
+
+            }
+            /*end of small devices*/
+
+            @media only screen and (max-width: 767.9px) {
+                #landfont {
+                    font-size: 15vw;
+                }
+                .sub {
+
+                }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+                #landfont {
+                    font-size: 12vw;
+                }
+            }
+
+            @media only screen and (min-width: 992px) and (max-width: 1199.98px){
+
+            }
+
+            @media only screen and (min-width: 1200px){
+
+            }
